@@ -1,0 +1,1174 @@
+/* PAG INICIAL */
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #171616;
+  color: #f1f1f1;
+  font-family: Poppins;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+}
+
+.item1 {
+  grid-area: menu;
+}
+
+.item2 {
+  grid-area: main;
+}
+
+.item3 {
+  grid-area: linha;
+}
+
+.item4 {
+  grid-area: contato;
+}
+
+.head {
+  position: absolute;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'menu main main main main contato'
+    'linha linha linha linha linha linha';
+  gap: 0px;
+  padding-top: 20px;
+}
+
+
+.grid-container>div {
+  text-align: left;
+}
+
+.item {
+  position: relative;
+  padding-left: 45px;
+
+}
+
+.item1 {
+  position: relative;
+  padding-left: 40px;
+}
+
+.item2 {
+  position: relative;
+  padding-left: 5%;
+  padding-top: 40px;
+}
+
+.item3 {
+  float: left;
+  width: 100%;
+}
+
+.item4 {
+  float: left;
+  font-size: 18px;
+  padding-top: 10px;
+  justify-content: center;
+  margin-top: 10.5px;
+
+
+}
+
+
+nav {
+  background-color: #171616;
+  align-items: center;
+}
+
+nav ul {
+  width: 100%;
+}
+
+ul {
+  font-size: 19px;
+  justify-content: center;
+  padding-inline-start: 0px;
+}
+
+nav li {
+  display: inline-block;
+  padding-top: 10px;
+  float: none;
+  position: relative;
+  /* Necessário para o posicionamento do dropdown */
+}
+
+li {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+
+/* Efeito da linha abaixo do botão principal (não nos itens do dropdown) */
+nav li>a {
+  display: inline-block;
+  color: #f1f1f1;
+  text-decoration: none;
+  padding: 10px;
+  position: relative;
+  /* Necessário para o ::after */
+  background-color: transparent;
+  /* Garante que o fundo do botão não apareça */
+}
+
+nav li>a:hover {
+  background-color: transparent;
+  /* Mantém o fundo transparente no hover */
+}
+
+nav li>a:hover::after,
+li:hover>a::after {
+  /* Garante que a linha continue visível quando o item do dropdown estiver sendo hoverado */
+  width: 100%;
+  /* Linha se expande */
+}
+
+/* Linha aparece apenas no link principal */
+nav li>a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 3px;
+  /* espessura da linha */
+  background-color: #0dc6ff;
+  /* cor da linha */
+  transition: all 0.3s ease;
+  position: absolute;
+  bottom: -2px;
+  /* Posição da linha abaixo do texto */
+  left: 0;
+}
+
+/* Quando o link principal for hovered, a linha aparece */
+nav li>a:hover::after {
+  width: 100%;
+}
+
+
+/* Efeito hover no link principal (não no item do dropdown) */
+nav li>a:hover {
+  background-color: transparent,
+}
+
+.dropdown1,
+.dropdown2,
+.dropdown3,
+.dropdown4 {
+  z-index: 100;
+  padding-top: 10px;
+  justify-content: center;
+  position: relative;
+  /* Garante que o conteúdo do dropdown seja posicionado corretamente */
+}
+
+.dropdown-menu {
+  z-index: 100;
+  position: absolute;
+  top: 100%;
+  /* Garante que o dropdown fique abaixo do item */
+  left: 0;
+  display: none;
+  font-size: 18px;
+  background-color: #292929;
+  /* Cor do fundo do dropdown */
+  min-width: 160px;
+  /* Largura mínima do menu */
+}
+
+/* Estilo dos itens do dropdown */
+.dropdown-menu a {
+  display: block;
+  z-index: 100;
+  color: #f1f1f1;
+  background-color: #171616;
+  font-size: 17px;
+  padding: 10px;
+  text-decoration: none;
+  /* Remove o sublinhado dos itens do dropdown */
+}
+
+/* Exibe o dropdown quando o item é hovered */
+.dropdown1:hover .dropdown-menu,
+.dropdown2:hover .dropdown-menu,
+.dropdown3:hover .dropdown-menu,
+.dropdown4:hover .dropdown-menu {
+  display: block;
+}
+
+/* Efeito hover nos itens do dropdown */
+.dropdown-menu a:hover {
+  background-color: #333;
+  /* Efeito de hover nos itens */
+}
+
+
+.slider {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  /* Esconde qualquer conteúdo que ultrapasse os limites */
+  padding-bottom: 30px;
+}
+
+/* Wrapper que contém as imagens */
+.slider-wrapper {
+  display: flex;
+  /* As imagens ficam lado a lado */
+  width: 100%;
+  /* O wrapper ocupa toda a largura do contêiner */
+  animation: slide 70s linear infinite;
+  /* A animação vai durar e será contínua */
+}
+
+/* Imagens que deslizam */
+.slider img {
+  width: 100vw;
+  /* Cada imagem ocupa 100% da largura da tela */
+  height: 70vh;
+  /* A altura das imagens */
+}
+
+/* Animação para mover o slider */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+    /* Começa na posição inicial */
+  }
+
+  50% {
+    transform: translateX(-100%);
+    /* Mover 100% da largura da tela para a esquerda */
+  }
+
+  100% {
+    transform: translateX(-200%);
+    /* Mover 200% da largura da tela (como se houvesse um loop de imagens) */
+  }
+}
+
+.grid-container1 {
+  display: flex;
+  padding-right: 7%;
+  width: 100%;
+  grid-template-columns: auto auto;
+  justify-content: left;
+}
+
+.grid-container4 {
+  display: flex;
+  padding-right: 7%;
+  width: 100%;
+  justify-content: left;
+}
+
+.grid-container3 {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto;
+  justify-content: left;
+}
+
+
+.grid-item1 {
+  padding-inline-start: 6.5%;
+  padding-top: 50px;
+  font-size: 35px;
+  background-position: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.grid-item2 {
+  position: relative;
+  font-size: 20px;
+  width: 100%;
+  max-height: 600px;
+  padding-bottom: 30px;
+}
+
+.grid-item22 {
+  position: relative;
+  font-size: 20px;
+  width: 100%;
+  max-height: 600px;
+  padding-bottom: 30px;
+  padding-top: 10px;
+}
+
+.grid-item {
+  padding-inline-start: 320px;
+  padding-top: 70px;
+  font-size: 20px;
+  background-position: center;
+  width: 100%;
+  text-align: right;
+}
+
+
+.grid-item3 {
+  padding-top: 8%;
+  font-size: 18px;
+  background-position: center;
+  width: 100%;
+  justify-content: center;
+  margin-right: 10%;
+}
+
+.grid-item4 {
+  padding-inline-start: 5%;
+  padding-top: 15%;
+  font-size: 35px;
+  background-position: center;
+  width: 100%;
+  padding-left: 3%;
+  justify-content: center;
+}
+
+.grid-item5 {
+  position: relative;
+  font-size: 20px;
+  width: 100%;
+  padding-bottom: 30px;
+  text-align: center;
+  padding-left: 10%;
+}
+
+
+.sessoes {
+  position: relative;
+  padding-right: 80px;
+  text-align: right;
+  font-size: 17px;
+}
+
+#image3 {
+  width: 100%;
+  padding-top: 20px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.text {
+  padding-right: 8%;
+  color: #f1f1f1;
+  text-align: left;
+  font-size: 16px;
+  font-style: normal;
+  font-family: poppins;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+/* Container do grid */
+.grid-container3 {
+  display: flex;
+  padding-left: 5%;
+  grid-template-columns: repeat(auto-fill, minmax(0px, 1fr));
+  /* Grid responsivo */
+  justify-items: center;
+}
+
+.grid-container2 {
+  display: flex;
+  padding-top: 30px;
+  padding-left: 6%;
+  grid-template-columns: repeat(auto-fill, minmax(0px, 1fr));
+  /* Grid responsivo */
+  justify-items: center;
+  padding-bottom: 50px;
+
+}
+
+.grid-containerexpo {
+  display: grid;
+  /* Ativa o grid */
+  grid-template-columns: repeat(3, 1fr);
+  /* Cria 3 colunas de largura igual */
+  grid-template-rows: auto;
+  /* A altura das linhas será ajustada automaticamente */
+  width: 100%;
+  /* Garante que o grid ocupe toda a largura disponível */
+  padding-left: 6%;
+  /* Adiciona algum padding ao redor do grid */
+}
+
+
+/* Contêiner de imagem de dentro da expo e atvdd */
+.image-container {
+  position: relative;
+  width: 60%;
+  height: auto;
+  padding-top: 20px;
+
+}
+
+.img-fut {
+  width: 40%;
+}
+
+/* A imagem de fundo */
+.image {
+  width: 100%;
+  object-fit: cover;
+  /* A imagem vai cobrir o espaço sem distorcer */
+  display: block;
+  border-radius: 20px;
+
+}
+
+/* O retângulo de texto fixado na parte inferior da imagem */
+.text-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #f1f1f1;
+  color: #171616;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: height 0.6s ease-out;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* Texto inicial (sempre visível) */
+.text-short {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  top: 10px;
+  /* Fixado no topo do retângulo */
+  left: 10px;
+  /* Ajuste do texto à esquerda */
+  z-index: 1;
+  /* Garante que o texto inicial fique em cima do texto completo */
+}
+
+/* Texto completo (inicialmente escondido) */
+.text-full {
+  font-size: 14px;
+  margin: 5px;
+  position: absolute;
+  top: 40px;
+  /* O texto completo começa abaixo do texto inicial */
+  left: 10px;
+  z-index: 0;
+  /* O texto completo ficará abaixo do texto inicial */
+  opacity: 0;
+  /* O texto completo começa invisível */
+  transform: translateY(20px);
+  /* O texto completo começa um pouco abaixo */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  /* Transição suave para a opacidade e o movimento */
+}
+
+/* Efeito de hover */
+.image-container:hover .text-overlay {
+  height: 170px;
+  /* Aumenta a altura do retângulo no hover */
+}
+
+.image-container:hover .text-full {
+  opacity: 1;
+  /* Torna o texto completo visível */
+  transform: translateY(0);
+  /* O texto completo sobe suavemente */
+}
+
+
+
+
+
+/* Noticiais Incremento */
+#retangulo {
+  width: 100%;
+  border-radius: 20px;
+  background-color: #333;
+  color: #f1f1f1;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+
+/* ingressos  */
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #171616;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  font-weight: bold;
+  display: block;
+
+}
+
+input[type="number"],
+input[type="date"],
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #0dc6ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0dc6ff;
+}
+
+#totalDisplay,
+#validityDisplay {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+#validityDisplay p {
+  font-weight: normal;
+  color: #171616;
+}
+
+/* Esconder a seção de confirmação inicialmente */
+#confirmSection {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Esconder a seção de cadastro do comprador inicialmente */
+#registrationSection {
+  margin-top: 20px;
+  display: block;
+
+}
+
+#paymentSection.container {
+  margin-top: 20px;
+  display: block;
+
+}
+
+
+
+/* cadastro  */
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #171616;
+}
+
+h1 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+form div {
+  margin-bottom: 15px;
+  color: #171616;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #171616;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+
+
+button:hover {
+  background-color: #0dc6ff;
+}
+
+
+#cadastrarButton {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #0dc6ff;
+}
+
+/* pagamento  */
+
+#paymentSection {
+  margin-top: 20px;
+  display: block;
+}
+
+select[type="paymentSection"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+
+/* Como Chegar */
+.maps {
+  display: grid;
+  width: 70%;
+  height: 20%;
+  border-radius: 6px;
+}
+
+
+.juncao {
+  display: grid;
+}
+
+
+#retanguloone {
+  display: grid;
+  margin-right: 3%;
+  width: 30%;
+  margin: 30px;
+  border-radius: 15px;
+  background-color: #f1f1f1;
+  background-repeat: no-repeat;
+}
+
+.retanguloone {
+  display: grid;
+  margin-right: 3%;
+  width: 30%;
+  margin: 30px;
+  border-radius: 15px;
+  background-color: #f1f1f1;
+  background-repeat: no-repeat;
+}
+
+/* Fale Conosco */
+
+#enviarButton {
+  text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+input[type="mensage"] {
+  width: 100%;
+  padding: 10px;
+  padding-bottom: 150px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+select[type="assunt"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+select[type="paymentMethod"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+option {
+  width: 100%;
+  padding: 10px;
+}
+
+
+
+
+/* a linha do tempo no sobre o museu*/
+
+
+
+
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 7px;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.containertimeline {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 40%;
+}
+
+/* The circles on the timeline */
+.containertimeline::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: white;
+  border: 4px solid #0DC6FF;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.lineleft {
+  left: 10%;
+}
+
+/* Place the container to the right */
+.lineright {
+  left: 50%;
+}
+
+
+
+/* Add arrows to the left container (pointing right) */
+.lineleft::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.lineright::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.lineright::after {
+  left: -16px;
+}
+
+/* The actual content */
+.contenttimeline {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+
+main {
+  flex: 1;
+}
+
+
+footer {
+  background-color: #f1f1f1;
+  display: flex;
+  position: absolute;
+  height: 210px;
+  width: 100%;
+  margin-top: auto;
+
+}
+
+.itemfooter1 {
+  grid-area: logo;
+}
+
+.itemfooter2 {
+  grid-area: contato;
+}
+
+.itemfooter3 {
+  grid-area: telefone;
+}
+
+
+
+.head {
+  position: absolute;
+}
+
+.grid-containerfooter {
+  display: grid;
+  grid-template-areas:
+    'logo contato telefone';
+  gap: 20px;
+  width: 100%;
+  height: 210px;
+}
+
+
+.itemfooter1 {
+  position: relative;
+  padding-left: 5%;
+}
+
+.itemfooter2 {
+  position: relative;
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+.itemfooter3 {
+  position: relative;
+  padding-top: 30px;
+}
+
+
+h4 {
+  color: #171616;
+  font-weight: 600;
+}
+
+.fa {
+  width: 100%;
+  text-align: left;
+  text-decoration: none;
+
+
+}
+
+.fa span {
+  font-family: 'Sora';
+  font-size: 16px;
+  padding-left: 5px;
+  padding-bottom: 5px;
+
+}
+
+.fa:hover {
+  color: #888888;
+}
+
+.fa-instagram {
+  color: #171616;
+}
+
+.item-direita {
+  left: -25%;
+}
+
+
+.mapa-borda {
+  clip-path: inset(0 0 0 0 round 20px) !important;
+}
+
+/* PAG  */
+@media only screen and (max-width: 1160px) {
+
+  .text-short {
+    font-size: 16px;
+  }
+
+  .text-full {
+    font-size: 10px;
+  }
+
+  .text {
+    font-size: 15px;
+  }
+
+  .image-container {
+    min-width: 60%;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .grid-container {
+    font-size: 11px;
+    padding-right: 5px;
+  }
+
+  .grid-container1 {
+    padding-right: 10%;
+  }
+
+  
+
+  .grid-container1,
+  .grid-container2,
+  .grid-container3 {
+    font-size: 13px;
+    flex-direction: column;
+    padding-left: 5%;
+  }
+
+  .grid-container2,
+  .grid-container3 {
+    align-items: center;
+  }
+
+  .espace {
+    margin-right: 10%;
+    padding-right: 5%;
+  }
+
+  .grid-item {
+    font-size: 15.5px;
+    padding-top: 0px;
+   padding-left: 20%;
+    padding-right: 15%;
+  }
+
+
+  .grid-item1 {
+    padding-left: 20%;
+    font-size: 28px;
+  }
+
+  .grid-container1 .grid-item1:has(.grid-item3) {
+    padding-left: 10% !important;
+    padding-bottom: 15px;
+  }
+
+  .grid-reverse .grid-item1:has(.grid-item3) {
+    padding-left: 10% !important;
+    padding-bottom: 15px;
+  }
+
+  .grid-item2 {
+    justify-items: center;
+    padding-left: 5%;
+    margin-left: 0%;
+    margin-right: 10%;
+  }
+
+  .grid-item22 {
+    margin-left: 0%;
+    margin-right: 23%;
+  }
+
+  .grid-item3 {
+    padding-top: 8px;
+   
+  }
+
+  .grid-container2-fut {
+    width: 132%;
+  }
+
+  .grid-reverse {
+    flex-direction: column-reverse;
+    padding-right: 1%;
+  }
+
+  .item2 {
+    font-size: 13px;
+    padding-left: 5%;
+  }
+
+  .item4 {
+    font-size: 10px;
+  }
+
+
+  .grid-item2 .image-container {
+    margin-left: 0% !important;
+  }
+
+  .item-direita {
+    left: 0%;
+  }
+
+  .grid-maps {
+    gap: 26%;
+  }
+
+  #retanguloone {
+    width: 70%;
+    margin: 7px;
+    flex-direction: column;
+  }
+
+  .item {
+    position: relative;
+    padding-left: 29px;
+    align-self: top;
+  }
+
+  .item a img {
+    padding-top: 2px;
+    max-height: 46px;
+  }
+
+
+  .image-containerpat {
+    width: 80%;
+  }
+
+
+  .container {
+    width: 80%;
+    font-size: 12px;
+  }
+
+  .contenttimeline {
+    font-size: 11px;
+    padding: 15px;
+  }
+  .img-fut{
+    width: 80%;
+  }
+
+
+  @media only screen and (max-width: 50%) {
+    .image-container {
+      min-width: 30%;
+      text-align: center;
+      align-items: center;
+    }
+  }
+
+  footer {
+    height: 420px;
+    background-color: #f1f1f1;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+  }
+
+  .grid-containerfooter {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 30px;
+    background-color: #f1f1f1;
+    height: 0;
+  }
+
+  .itemfooter2,
+  .itemfooter3 {
+    padding-left: 5%;
+    padding-bottom: 10px;
+    background-color: #f1f1f1;
+  }
+
+  .grid-container3.grid-reverse .grid-item1:has(.grid-item3).item-contd {
+    padding-left: 0% !important;
+  }
+
+  .grid-container1 .grid-item1:has(.grid-item3).item-contd-2 {
+    padding-left: 5% !important;
+  }
+
+}
+
+@media only screen and (max-width: 529px) {
+  .item {
+    position: relative;
+    padding-left: 5px;
+    align-self: top;
+  }
+
+  .item a img {
+    padding-top: 12px;
+    max-height: 40px;
+  }
+}
+
+@media only screen and (max-width: 429px) {
+  footer {
+    height: 620px;
+  }
+}
